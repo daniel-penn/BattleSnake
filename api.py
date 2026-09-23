@@ -5,11 +5,10 @@ You probably want to get started with `Context` methods, and have a look at `Exc
 """
 
 from enum import Enum
-from typing import List, Tuple
 
 
 class PlayerState:
-    position: List[Tuple[int, int]]
+    position: list[tuple[int, int]]
     """A list of snake nodes, where the first one is the player's tail, last is head."""
 
     health: int
@@ -18,10 +17,10 @@ class PlayerState:
     length: int
     """The current length of the snake."""
 
-    head: Tuple[int, int]
+    head: tuple[int, int]
     """The location of the head of the snake."""
 
-    body: List[Tuple[int, int]]
+    body: list[tuple[int, int]]
     """The location list of everything but the head of the snake."""
 
 
@@ -62,31 +61,31 @@ class Context:
         """
         raise NotImplementedError("Not Implemented!")
 
-    def get_apples(self) -> List[Tuple[int, int]]:
+    def get_apples(self) -> list[tuple[int, int]]:
         """
         returns a list of the coordinates (x,y) where apples are located.
         """
         raise NotImplementedError("Not Implemented!")
 
-    def get_game_size(self) -> Tuple[int, int]:
+    def get_game_size(self) -> tuple[int, int]:
         """
         returns the width,height of the game map.
         """
         raise NotImplementedError("Not Implemented!")
 
-    def get_occupied_tiles(self) -> List[Tuple[int, int]]:
+    def get_occupied_tiles(self) -> list[tuple[int, int]]:
         "returns a list of tiles occupied by snakes, as coordinates (x,y)"
         raise NotImplementedError("Not Implemented!")
 
-    def in_bounds(self, coord: Tuple[int, int]) -> bool:
+    def in_bounds(self, coord: tuple[int, int]) -> bool:
         """returns true if coord (a coordinate (x,y)) is in the bounds of the game map"""
         raise NotImplementedError("Not Implemented!")
 
-    def get_active_players(self) -> List[PlayerState]:
+    def get_active_players(self) -> list[PlayerState]:
         """returns a list of all active players"""
         raise NotImplementedError("Not Implemented!")
 
-    def get_position(self, player: PlayerState) -> List[Tuple[int, int]]:
+    def get_position(self, player: PlayerState) -> list[tuple[int, int]]:
         """
         returns a list of the tiles player is occupying as coords (x,y)
         the tail is at the first position (position[0]), head is at the last position (position[-1])
